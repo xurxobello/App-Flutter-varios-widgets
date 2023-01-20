@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:my_app/theme/app_theme.dart';
+
+class CustomCardType1 extends StatelessWidget {
+  const CustomCardType1({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: [
+          const ListTile(
+            leading: Icon(Icons.photo_album_outlined, color: AppTheme.primary,),
+            title: Text('Soy un título'),
+            subtitle: Text('Aute excepteur excepteur ipsum minim sunt incididunt cillum esse. Sint eiusmod aliqua nostrud culpa cillum mollit ut voluptate ut exercitation veniam consectetur do. Labore aliqua nisi exercitation id excepteur officia Lorem ullamco Lorem sint.'),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {}, 
+                  child: const Text ('Cancel')
+                  ),
+                TextButton(
+                  onPressed: () {}, 
+                  child: const Text ('Ok')
+                ),
+
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Listview2Screen extends StatelessWidget {
 
-  final options = const ['Megaman','Metal Gear','Super Smash','Final Fantasy'];
+  final options = const ['Megaman','Metal Gear', 'Emma','Super Smash','Final Fantasy'];
   
   const Listview2Screen({Key? key}) : super(key: key);
   
@@ -11,15 +11,13 @@ class Listview2Screen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Listview Tipo 2'),
-        elevation: 0,
-        backgroundColor: Colors.orange,
       ),
       body: ListView.separated(
         itemCount: options.length,
         itemBuilder: (context, index) => ListTile(
-          leading: const Icon(Icons.numbers_outlined, color: Colors.green),
+          leading: const Icon(Icons.numbers_outlined, color: Colors.blue),
           title: Text (options[index]),
-          trailing: const Icon(Icons.arrow_forward_ios_outlined, color: Colors.purple,),
+          trailing: const Icon(Icons.arrow_forward_ios_outlined, color: Colors.green),
           onTap: () {
             final game = options[index];
             print(game);
