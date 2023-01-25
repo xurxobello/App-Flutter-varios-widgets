@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:my_app/theme/app_theme.dart';
 
 class CustomCardType2 extends StatelessWidget {
-  const CustomCardType2({super.key});
+
+  final String imageUrl;
+
+  // con la ? indicamos que ese valor puede ser opcional, por lo que en el this.name no tenemos que poner required
+  final String? name;
+
+  const CustomCardType2({super.key, required this.imageUrl, this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -12,24 +18,26 @@ class CustomCardType2 extends StatelessWidget {
         borderRadius: BorderRadius.circular(18)
       ),
       elevation: 30,
-      shadowColor: AppTheme.primary.withOpacity(0.4),
+      shadowColor: AppTheme.primary.withOpacity(0.5),
       child: Column(
         children: [
-          const FadeInImage(
-            image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-            placeholder: AssetImage('../assets/jar-loading.gif'),
+          FadeInImage(
+            image: NetworkImage( imageUrl ),
+            placeholder: const AssetImage('../assets/jar-loading.gif'),
 
             width: double.infinity,
             height: 400,
             fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 300),
+            fadeInDuration: const Duration(milliseconds: 300),
           ),
 
-          Container(
-            alignment: AlignmentDirectional.centerEnd,
-            padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
-            child: const Text('Un bonito buho')
-          )
+          // hacemos un if para que en el caso de que no nos aporten name no aparezca nada
+          if (name != null)
+            Container(
+              alignment: AlignmentDirectional.centerEnd,
+              padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
+              child: Text( name! )
+            )
         ],
       ),
     );

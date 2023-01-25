@@ -19,9 +19,25 @@ class AppTheme {
 
     scaffoldBackgroundColor: const Color.fromARGB(255, 255, 245, 158),
 
+    // Tema de los textbutton
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom( foregroundColor: primary )
-      )
+    ),
+
+    // FloatingActionButtons
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: primary,
+      elevation: 0,
+    ),
+
+    // ElevatedButtons
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primary,
+        shape: const StadiumBorder(),
+        elevation: 0
+      ),
+    )
   );
 
 
