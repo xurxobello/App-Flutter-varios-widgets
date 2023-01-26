@@ -12,8 +12,8 @@ class AnimatedScreen extends StatefulWidget {
 
 class _AnimatedScreenState extends State<AnimatedScreen> {
 
-  double _width = 50;
-  double _height = 50;
+  double _width = 200;
+  double _height = 200;
   Color _color = Colors.red;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(10);
 
