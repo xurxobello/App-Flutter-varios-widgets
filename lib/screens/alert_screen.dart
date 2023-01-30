@@ -82,10 +82,11 @@ class AlertScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Text ('Mostrar alerta', style: TextStyle(fontSize: 16)),
           ),
-          onPressed: () => displayDialogAndroid(context)
-          /* onPressed: () => Platform.isAndroid
+          // onPressed: () => displayDialogAndroid(context)
+          // onPressed: () => displayDialogIOS(context)
+          onPressed: () => Platform.isAndroid
           ? displayDialogAndroid(context)
-          : displayDialogIOS(context) */
+          : displayDialogIOS(context)
         )
       ),
       floatingActionButton: FloatingActionButton(

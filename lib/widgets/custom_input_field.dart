@@ -12,6 +12,11 @@ class CustomInputField extends StatelessWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
 
+  // formProperty es la propiedad a la cual va a apuntar del formulario
+  final String formProperty;
+
+  // con formValues vamos a obtener todos los valores del formulario
+  final Map <String, String> formValues;
 
   const CustomInputField({
     Key? key, 
@@ -23,6 +28,8 @@ class CustomInputField extends StatelessWidget {
     this.suffixIcon, 
     this.keyboardType, 
     this.obscureText = false, 
+    required this.formProperty, 
+    required this.formValues, 
   }) : super(key: key);
 
   @override
@@ -43,7 +50,8 @@ class CustomInputField extends StatelessWidget {
       obscureText: obscureText,
 
       onChanged: (value) {
-        print('value $value');
+        // tomamos nuestro formValues, apuntamos a nuestro formProperty y eso va a ser igual al valor que está teniendo el input
+        formValues[formProperty] = value;
       },
 
       validator: (value) {
